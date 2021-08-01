@@ -1,6 +1,8 @@
-const inputs = [14,3,19,2,99,11,1,10,12,6,4,13,9,17,15,8,20,7,5,18,16,21];
+const { getInputs, swap } = require('../_common/common');
 
-const sort = () => {
+const inputs = getInputs();
+
+const selectionSort = () => {
 
     for(let i=0; i<inputs.length; ++i){
         let _min = Number.MAX_VALUE;
@@ -13,20 +15,11 @@ const sort = () => {
 
             }
         }
-        swap(i, _minIdx);
+        swap(inputs, i, _minIdx);
     }
             
 }
 
-const swap = (a, b) => {
-    const temp = inputs[b];
-    inputs[b] = inputs[a];
-    inputs[a] = temp;
-}
-
-
-const selectionSort = () => {
-    sort();
-}
-
 selectionSort();
+
+
